@@ -1,5 +1,5 @@
 import { LoginData } from '@services/Login';
-import axios, { RawAxiosRequestHeaders } from 'axios';
+import axios, { AxiosError, RawAxiosRequestHeaders } from 'axios';
 import { parse } from 'cookie';
 import config from '../config';
 
@@ -369,20 +369,24 @@ async  function postLoginData(path:string,postdata:LoginData) {
  }     
 
 };
-
+type Errors = {
+  err?: string|any;
+  error?: string|any;
+  errors?: string|any;
+}
 function checkError(error:AxiosError){
-
-  let data_ = error.response?.data;
+  
+  let data_:Errors = error.response?.data as Errors;
   if(typeof(data_) === 'string'){
      return data_;
   }else if(typeof(data_) === 'object'){
 
     if(data_?.hasOwnProperty('err')){
-      return data_?.err;
+      return data_.err;
     }else if(data_?.hasOwnProperty('error')){
-      return data_?.error;
+      return data_.error;
     }else if(data_?.hasOwnProperty('errors')){
-      return data_?.errors;
+      return data_.errors;
     }else{
       return  error.message
     }
