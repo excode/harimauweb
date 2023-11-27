@@ -4,6 +4,11 @@ const menus = {
     { label: "Users Table", icon: "pi pi-fw pi-users", to: "/secure/users" },
     { label: "E-Wallets", icon: "pi pi-fw pi-wallet", to: "/secure/ewallets" },
     {
+      label: "Investments",
+      icon: "pi pi-fw pi-user",
+      to: "/secure/accounts",
+    },
+    {
       label: "Wallet Type",
       icon: "pi pi-fw pi-sitemap",
       to: "/secure/walletType",
@@ -25,11 +30,7 @@ const menus = {
       icon: "pi pi-fw pi-arrow-right-arrow-left",
       to: "/secure/transaction",
     },
-    {
-      label: "Accounts",
-      icon: "pi pi-fw pi-user",
-      to: "/secure/accounts",
-    },
+    
     { label: "Deposit", icon: "pi pi-fw pi-flag", to: "/secure/deposit" },
     { label: "Transfer", icon: "pi pi-fw pi-send", to: "/secure/transfer" },
     { label: "Exchange", icon: "pi pi-fw pi-sync", to: "/secure/exchange" },

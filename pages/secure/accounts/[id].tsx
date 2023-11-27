@@ -1,16 +1,10 @@
 
-import getConfig from 'next/config';
-import { Button } from 'primereact/button';
-import { Checkbox } from 'primereact/checkbox';
-import { Chip } from 'primereact/chip';
+import { Accounts, AccountsService } from '@services/Accounts';
+import moment from 'moment';
+import { useRouter } from 'next/router';
 import { Toast } from 'primereact/toast';
-import React, { useState,useEffect,useRef } from 'react';
-import { useRouter } from 'next/router'
+import { useEffect, useRef, useState } from 'react';
 import BlockViewer from '../../../components/BlockViewer';
-import config from "@config/index"; 
-import { Image } from 'primereact/image';
-import moment from 'moment' 
-import {Accounts,AccountsService,AccountsKey } from '@services/Accounts';
 
 const AccountsDetails = () => {
     const router = useRouter()

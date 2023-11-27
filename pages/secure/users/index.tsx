@@ -1,32 +1,23 @@
+import { validate, validateForm } from '@lib/validation';
+import { SortType } from '@services/CommonTypes';
+import { Users, UsersKey, UsersQuery, UsersService } from '@services/Users';
 import getConfig from 'next/config';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { FilterMatchMode, FilterOperator } from 'primereact/api';
 import { Button } from 'primereact/button';
+import { Calendar } from 'primereact/calendar';
 import { Column } from 'primereact/column';
-import { DataTable,DataTableFilterMeta,DataTableFilterEvent } from 'primereact/datatable';
+import { DataTable, DataTableFilterEvent, DataTableFilterMeta } from 'primereact/datatable';
 import { Dialog } from 'primereact/dialog';
+import { Dropdown } from 'primereact/dropdown';
 import { InputNumber } from 'primereact/inputnumber';
 import { InputText } from 'primereact/inputtext';
-import { InputTextarea } from 'primereact/inputtextarea';
-import { Calendar } from 'primereact/calendar';
-import { Dropdown } from 'primereact/dropdown';
-import { ListBox } from 'primereact/listbox';
-import { RadioButton } from 'primereact/radiobutton';
-import { Rating } from 'primereact/rating';
-import { TriStateCheckbox } from 'primereact/tristatecheckbox';
-import { Checkbox } from 'primereact/checkbox';
-import {MultiSelect} from 'primereact/multiselect';
-import { AutoComplete } from 'primereact/autocomplete';
 import { Password } from 'primereact/password';
 import { Toast } from 'primereact/toast';
 import { Toolbar } from 'primereact/toolbar';
 import { classNames } from 'primereact/utils';
 import React, { useEffect, useRef, useState } from 'react';
-import {validateForm,validate} from '@lib/validation'
-import {ListType,SortType} from '@services/CommonTypes'
-import { useRouter } from 'next/router'
-import Link from 'next/link';
-import config from "@config/index"; 
-import {Users,UsersQuery,UsersKey, UsersService } from '@services/Users';
 
 
 const UsersPage = () => {
@@ -107,9 +98,9 @@ referral: { operator: FilterOperator.AND, constraints: [{ value: null, matchMode
 };
 
     const datausertypes =[
-	{value:"Admin",name:"Admin"},
-	{value:"Manager",name:"Manager"},
-	{value:"User",name:"User"}
+	{value:"0",name:"Admin"},
+	{value:"1",name:"Manager"},
+	{value:"2",name:"User"}
 ]
                 
 
